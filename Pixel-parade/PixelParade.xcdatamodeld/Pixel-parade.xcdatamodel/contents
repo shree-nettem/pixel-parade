@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Pack" representedClassName="Pack" syncable="YES">
+        <attribute name="descriptionText" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="sync.remoteKey" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES">
+            <userInfo>
+                <entry key="sync.isPrimaryKey" value="true"/>
+            </userInfo>
+        </attribute>
+        <attribute name="isPurchased" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="purchasedDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="stickers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StickerPreview" inverseName="pack" inverseEntity="StickerPreview" syncable="YES"/>
+    </entity>
+    <entity name="StickerFull" representedClassName="StickerFull" syncable="YES">
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES">
+            <userInfo>
+                <entry key="sync.isPrimaryKey" value="true"/>
+            </userInfo>
+        </attribute>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="stickerpackID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="StickerPreview" representedClassName="StickerPreview" syncable="YES">
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES">
+            <userInfo>
+                <entry key="sync.isPrimaryKey" value="true"/>
+            </userInfo>
+        </attribute>
+        <attribute name="position" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="stickerpackID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="pack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pack" inverseName="stickers" inverseEntity="Pack" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Pack" positionX="-63" positionY="-18" width="128" height="180"/>
+        <element name="StickerFull" positionX="-45" positionY="63" width="128" height="105"/>
+        <element name="StickerPreview" positionX="-54" positionY="9" width="128" height="120"/>
+    </elements>
+</model>

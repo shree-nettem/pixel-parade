@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gfm-GN-6es">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Navigation View Controller-->
+        <scene sceneID="ar2-BB-rTC">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Gfm-GN-6es" customClass="BaseNavigationViewController" customModule="Pixel_Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yQG-g5-2EF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dIz-3U-hNr" kind="relationship" relationship="rootViewController" id="Zem-47-U5l"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aE-pq-vHy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="103"/>
+        </scene>
+        <!--ShopViewController-->
+        <scene sceneID="vS9-zu-Yjb">
+            <objects>
+                <viewController title="ShopViewController" id="dIz-3U-hNr" customClass="ShopViewController" customModule="Pixel_Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gx5-Bl-n8a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="tg8-hH-qGX"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="bPx-qb-Lc8"/>
+                    <navigationItem key="navigationItem" id="Iwk-Fd-JfT"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
+                        <size key="portraitSize" width="375" height="647"/>
+                        <size key="landscapeSize" width="647" height="375"/>
+                    </fixedSimulatedSizeMetrics>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VBe-iu-8eO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2309.5999999999999" y="102.99850074962519"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,72 @@
+/* 
+  Localization.strings
+  TemplateProject
+
+  Created by Vladimir Vishnyagov on 04/08/2017.
+  Copyright © 2017 Live Typing. All rights reserved.
+*/
+
+/// Common
+"ok" = "ОК";
+"cancel" = "Cancel";
+"error" = "Error";
+"settings" = "Settings";
+"share" = "Share";
+"dismiss" = "Dismiss";
+
+/// VIEWS
+
+"shop_cell.get_button.title" = "GET";
+
+/// STICKERS VIEW CONTROLLER
+
+"share_stickers" = "Share Sticker";
+
+// Errors
+
+"error.title" = "Ошибка";
+"error.notificationUser.message" = "Уведомления запрещены пользователем.";
+
+"error.cameraRestricted.title" = "Camera access needed";
+"error.cameraRestricted.message" = "If you want to add the Pixel Parade stickers to the photo, you need to enable access to Camera in Settings";
+
+"error.photoLibraryRestricted.title" = "Photo library access needed";
+"error.photoLibraryRestricted.message" = "If you want to add the Pixel Parade stickers to the existed photo, you need to enable access to Photo Library in Settings";
+
+"error.dismissStickerPhoto.title" = "Are you sure?";
+"error.dismissStickerPhoto.message" = "If you dismiss this screen, all your progress will be lost.";
+
+"error.noStickerPacks.title" = "Oops";
+"error.noStickerPacks.message" = "Looks like you haven’t any sticker packs. Check out our beautiful store, and grab some sticker pack!";
+
+"error.internalServer" = "Internal server error";
+"error.nothingRestore" = "Nothing to restore!";
+"error.receiptMissing" = "Receipt Not Found!";
+"error.storeKit.restore" = "Can't restore purchases, StoreKit Error";
+
+// Photo
+
+"photo.alertViewController.title" = "Take a photo";
+"photo.alertViewController.camera.title" = "Camera";
+"photo.alertViewController.library.title" = "Library";
+"photo.sticker.placeSticker" = "Place a sticker";
+
+// Go to app button
+
+"goToApp.title" = "GET STICKERS from PIXEL PARADE";
+
+// Restore purchases
+
+"restore.purchases" = "Restore purchases";
+
+// Delete stickers
+"delete.stickers" = "Drag a sticker here remove it from the photo";
+
+// Give email alert
+"giveEmail.title" = "Get more for free";
+"giveEmail.message" = "Give us your email and we will notify about new exclusive original stickers";
+
+// Shop
+"shop.stickersNotFound" = "Your search results have NOT been found. Please try a different key word(s).";
+"shop.allStickersHaveBeenBought" = "You have collected all of the Pixel Parade stickers. Please check back for new releases";
+

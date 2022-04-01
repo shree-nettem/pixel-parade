@@ -1,0 +1,53 @@
+disabled_rules:
+  - identifier_name
+  - nesting
+  - function_parameter_count
+  - trailing_whitespace
+
+opt_in_rules:
+  - control_statement
+  - empty_count
+  - first_where
+  - redundant_nil_coalesing
+  - switch_case_on_newline
+  - closure_spacing
+  - empty_string
+  - unused_import
+  - unused_private_declaration
+  - toggle_bool
+  - strict_fileprivate
+  - static_operator
+  - sorted_first_last
+  - redundant_type_annotation
+  # - private_outlet
+  - private_action
+  - overridden_super_call
+  - no_extension_access_modifier
+
+included:
+  - Pixel-parade
+  - iMessageExtension
+
+excluded:
+  - Pods
+  - R.generated.swift
+  - iMessageExtension/R.generated.swift
+
+line_length: 350
+
+type_body_length:
+  - 300 # warning
+  - 400 # error
+
+large_tuple: # warn user when using 3 values in tuple, give error if there are 4
+  - 3
+  - 4
+
+file_length:
+warning: 500
+error: 800
+
+identifier_name:
+min_length: 3
+type_name:
+min_length: 3

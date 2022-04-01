@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ilb-18-c4a">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Navigation View Controller-->
+        <scene sceneID="7O5-s6-q7I">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="Ilb-18-c4a" customClass="BaseNavigationViewController" customModule="Pixel_Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="q3o-cB-PzH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xW6-LF-rle" kind="relationship" relationship="rootViewController" id="3ld-Xm-MQg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaP-e9-30J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1481" y="103"/>
+        </scene>
+        <!--StickerPackViewController-->
+        <scene sceneID="cnd-Fa-zyQ">
+            <objects>
+                <viewController title="StickerPackViewController" id="xW6-LF-rle" customClass="StickerPackViewController" customModule="Pixel_Parade" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EYe-ZU-LoP"/>
+                        <viewControllerLayoutGuide type="bottom" id="C3Z-aa-evr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BpP-o8-SvL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="643-p5-rDJ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewLayout key="collectionViewLayout" id="o0C-eM-JJF"/>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C3Z-aa-evr" firstAttribute="top" secondItem="643-p5-rDJ" secondAttribute="bottom" id="8ri-4g-QDH"/>
+                            <constraint firstAttribute="trailing" secondItem="643-p5-rDJ" secondAttribute="trailing" id="Cmw-gU-My1"/>
+                            <constraint firstItem="643-p5-rDJ" firstAttribute="leading" secondItem="BpP-o8-SvL" secondAttribute="leading" id="QXF-BN-EOb"/>
+                            <constraint firstItem="643-p5-rDJ" firstAttribute="top" secondItem="EYe-ZU-LoP" secondAttribute="bottom" id="qWa-wu-56Q"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="stp-gi-PWm"/>
+                    <navigationItem key="navigationItem" id="bfx-eE-2pg"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <fixedSimulatedSizeMetrics key="simulatedDestinationMetrics">
+                        <size key="portraitSize" width="375" height="647"/>
+                        <size key="landscapeSize" width="647" height="375"/>
+                    </fixedSimulatedSizeMetrics>
+                    <connections>
+                        <outlet property="collectionView" destination="643-p5-rDJ" id="Xdh-E3-DzI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gc-A9-0d3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2309.5999999999999" y="102.99850074962519"/>
+        </scene>
+    </scenes>
+</document>

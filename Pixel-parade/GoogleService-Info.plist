@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>485473346770-7elmtrvm8uacqvsa45i0m9s8gls7c01o.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.485473346770-7elmtrvm8uacqvsa45i0m9s8gls7c01o</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBjF2hnx-RmcAP_MKlQVwn3h1quBPOmA30</string>
+	<key>GCM_SENDER_ID</key>
+	<string>485473346770</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.GoodIdeas.Pixel-Parade</string>
+	<key>PROJECT_ID</key>
+	<string>pixel-parade</string>
+	<key>STORAGE_BUCKET</key>
+	<string>pixel-parade.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:485473346770:ios:6c08ac16147f8d8d</string>
+	<key>DATABASE_URL</key>
+	<string>https://pixel-parade.firebaseio.com</string>
+</dict>
+</plist>

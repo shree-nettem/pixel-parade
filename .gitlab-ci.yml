@@ -1,0 +1,132 @@
+stages:
+  - build
+  - test
+  - deploy
+  - clean
+
+variables:
+  CLEAN: ""
+
+before_script:
+    - export PATH="~/.fastlane/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+    - export LANG="en_US.UTF-8"
+    - export xcarchive_timestamp=$(ls -lrt ~/Library/Developer/Xcode/Archives/`date +%Y-%m-%d`/ | grep $1\ `date +%d-%m-%Y` | tail -n 1 | awk '{split($0,a," "); print a[11]}')
+    - export git_hash=$(git rev-parse HEAD | cut -c1-8)
+    - export carbon_server=192.168.88.222
+    - export carbon_port=2003
+
+Compile Pixel-parade archive:
+  stage:
+    build
+  tags:
+    - ios
+  script:
+    - pod install
+    - xcodebuild -workspace Pixel-parade.xcworkspace -scheme Pixel-parade $CLEAN archive
+  only:
+    - develop
+    - master
+    - gitlab-ci
+  except:
+    - schedules
+
+Build Pixel-parade IPA:
+  stage:
+    build
+  tags:
+    - ios
+  script: 
+    - xcodebuild -exportArchive -archivePath "~/Library/Developer/Xcode/Archives/`date +%Y-%m-%d`/Pixel-parade `date +%d-%m-%Y`, ${xcarchive_timestamp}" -exportPath "~/.xcode/release/Pixel-parade_${git_hash}.ipa" -exportOptionsPlist ./exportOptions.plist
+  only:
+    - develop
+    - master
+    - gitlab-ci
+  except:
+    - schedules
+
+Run monkey tests:
+  stage:
+    test
+  tags:
+    - ios
+  script:
+    - pod install
+    - xcodebuild -workspace Pixel-parade.xcworkspace -scheme 'Pixel ParadeUITests' -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone XS,OS=12.4' test
+    - if [[ $? == 0 ]]; then echo "gitlab-ci.ios.monkeytests.pixel-parade 1 `date +%s`" | nc ${carbon_server} ${carbon_port}; fi
+    - >-
+        curl
+        -X "POST" "https://hooks.slack.com/services/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"
+        -H "Content-type: application/json"
+        --data "{
+                \"attachments\": [
+                    {
+                        \"fallback\": \"Required plain-text summary of the attachment.\",
+                        \"color\": \"#809c13\",
+                        \"pretext\": \"*Pixel-parade monkey tests*\",
+                        \"text\": \"Success\"
+                    }
+                ]
+                }"
+  only:
+    - schedules
+
+Kill com.apple.CoreSimulator.CoreSimulatorService:
+  stage:
+    test
+  tags:
+    - ios
+  script:
+    - kill -9 `ps aux | grep com.apple.CoreSimulator.CoreSimulatorService | grep -v grep | awk '{print $2}'`
+  only:
+    - schedules
+
+Deploy Pixel-parade app:
+  stage:
+    deploy
+  tags:
+    - ios
+  script:
+    - >-
+        curl
+        -s
+        --include
+        -X "POST" "https://buildserver.ltst.su/api/applications/Pixel-parade/builds"
+        -H "Accept: application/json"
+        -H "X-Api-Token: H04qGjFkezxL57Lcz17e9P9wMIMgGi4y"
+        -H "Content-Type: multipart/form-data;"
+        -F "build=@/Users/jenkins/.xcode/release/Pixel-parade_${git_hash}.ipa/Pixel-parade.ipa" > upload.log
+    - buildserver_url=$(grep -oe "https://.*\"" ./upload.log | sed 's/"//g')
+    - echo ${buildserver_url}
+    - >-
+        curl
+        -X "POST" "https://hooks.slack.com/services/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"
+        -H "Content-type: application/json"
+        --data "{
+                \"attachments\": [
+                    {
+                        \"fallback\": \"Required plain-text summary of the attachment.\",
+                        \"color\": \"#809c13\",
+                        \"pretext\": \"*Pixel-parade*\",
+                        \"text\": \"${buildserver_url}\",
+                        \"footer\": \"LiveTyping Buildserver\",
+                        \"footer_icon\": \"https://buildserver.ltst.su/favicon.png\"
+                    }
+                ]
+                }"
+  when: manual
+  except:
+    - schedules
+
+Cleanup:
+  stage:
+    clean
+  tags:
+    - ios
+  script:
+    - echo "Delete Pixel-parade `date +%d-%m-%Y`, ${xcarchive_timestamp}"
+    - rm -r ~/Library/Developer/Xcode/Archives/`date +%Y-%m-%d`/Pixel-parade*
+  only:
+    - develop
+    - master
+  except:
+    - schedules

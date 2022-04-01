@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main-logo" translatesAutoresizingMaskIntoConstraints="NO" id="U0g-hx-ibh">
+                                <rect key="frame" x="8" y="25" width="38" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="nWE-0g-n0A"/>
+                                    <constraint firstAttribute="width" constant="38" id="tIP-4b-w9T"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pixel Parade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2W-qb-pEs">
+                                <rect key="frame" x="54" y="30" width="146" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.82745098039215681" blue="0.83137254901960778" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fake-tab-bar" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-cb-Fgx">
+                                <rect key="frame" x="0.0" y="514" width="320" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="3xb-jv-gbt"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOW-Q4-jJ1" userLabel="selectionBottomLayerView">
+                                <rect key="frame" x="0.0" y="524" width="49" height="44"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fT4-aV-BZZ"/>
+                                    <constraint firstAttribute="width" constant="49" id="nrp-lv-eHG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThJ-1j-5DA" userLabel="selectionTopLayerView">
+                                <rect key="frame" x="0.0" y="519" width="49" height="5"/>
+                                <color key="backgroundColor" red="0.0" green="0.82745098039999998" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="MSS-hC-FtD"/>
+                                    <constraint firstAttribute="width" constant="49" id="Rex-bY-vjN"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shop-image" translatesAutoresizingMaskIntoConstraints="NO" id="enR-Kv-4Lh">
+                                <rect key="frame" x="7" y="526" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="WWD-h9-ihR"/>
+                                    <constraint firstAttribute="width" constant="35" id="vmN-UI-K1L"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="U0g-hx-ibh" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="9bL-k7-mEz"/>
+                            <constraint firstItem="enR-Kv-4Lh" firstAttribute="top" secondItem="ThJ-1j-5DA" secondAttribute="bottom" constant="2" id="E3X-Or-Qex"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="xJt-cb-Fgx" secondAttribute="bottom" id="EsZ-Au-Hcg"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="KOW-Q4-jJ1" secondAttribute="bottom" id="HyJ-fy-urp"/>
+                            <constraint firstItem="KOW-Q4-jJ1" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="QBw-6l-k4t"/>
+                            <constraint firstItem="U0g-hx-ibh" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="5" id="aQB-lG-MZh"/>
+                            <constraint firstItem="enR-Kv-4Lh" firstAttribute="centerX" secondItem="KOW-Q4-jJ1" secondAttribute="centerX" id="c8r-kJ-ot6"/>
+                            <constraint firstItem="u2W-qb-pEs" firstAttribute="leading" secondItem="U0g-hx-ibh" secondAttribute="trailing" constant="8" id="cm5-IO-Sgh"/>
+                            <constraint firstItem="ThJ-1j-5DA" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="o42-TC-DQT"/>
+                            <constraint firstItem="u2W-qb-pEs" firstAttribute="centerY" secondItem="U0g-hx-ibh" secondAttribute="centerY" id="tTY-fi-noE"/>
+                            <constraint firstItem="xJt-cb-Fgx" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="tgz-4T-EgG"/>
+                            <constraint firstItem="KOW-Q4-jJ1" firstAttribute="top" secondItem="ThJ-1j-5DA" secondAttribute="bottom" id="trn-X1-QTB"/>
+                            <constraint firstAttribute="trailing" secondItem="xJt-cb-Fgx" secondAttribute="trailing" id="zd8-m5-ANh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="50.625" y="373.94366197183098"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="fake-tab-bar" width="320" height="54"/>
+        <image name="main-logo" width="38" height="38"/>
+        <image name="shop-image" width="26" height="29"/>
+    </resources>
+</document>
