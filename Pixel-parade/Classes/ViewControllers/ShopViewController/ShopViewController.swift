@@ -234,6 +234,30 @@ class ShopViewController: BaseViewController {
             button.isEnabled = true
         }
     }
+    
+    class SearchBarContainerView: UIView {
+      let searchBar: UISearchBar
+      init(customSearchBar: UISearchBar) {
+        searchBar = customSearchBar
+        super.init(frame: CGRect.zero)
+
+        addSubview(searchBar)
+      }
+
+      override convenience init(frame: CGRect) {
+        self.init(customSearchBar: UISearchBar())
+        self.frame = frame
+      }
+
+      required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+      }
+
+      override func layoutSubviews() {
+        super.layoutSubviews()
+        searchBar.frame = bounds
+      }
+    }
 
     private func configureNavigationBar(dependOn state: ShopScreenState) {
         let view: UIView
@@ -242,15 +266,19 @@ class ShopViewController: BaseViewController {
         case .default:
             view = shopHeader
             navigationBackgroundColor = .white
+            navigationController?.navigationBar.barTintColor = navigationBackgroundColor
+            navigationItem.titleView = view
         case .searching:
-            view = searchBar
+            
+            let searchBar = searchBar
+               let searchBarContainer = SearchBarContainerView(customSearchBar: searchBar)
+            searchBarContainer.frame = CGRect(x: 0, y: 0, width: Screen.width, height: 44)
+               navigationItem.titleView = searchBarContainer
             navigationBackgroundColor = .ppLightCyan
             searchBar.becomeFirstResponder()
+            navigationController?.navigationBar.barTintColor = navigationBackgroundColor
             enableSearchBarCancelButton()
         }
-        view.frame.size.width = Screen.width
-        navigationController?.navigationBar.barTintColor = navigationBackgroundColor
-        navigationItem.titleView = view
     }
 
     // MARK: - Keyboard
